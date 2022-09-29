@@ -1,0 +1,58 @@
+body {
+    background-color: #fff2cc;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Fondamento", serif;
+    font-weight: normal;
+    font-variant: small-caps;
+}
+
+.input {
+    margin: auto;
+    text-align: center;
+    font-family: "Aref Ruqaa Ink", serif;
+    font-weight: normal;
+}
+
+input[type=password] {
+    width: 10%;
+    background-color: #fffaea;
+    border: 3px solid #e6e1d2;
+    border-radius: 4px;
+    outline: none;
+    /*focus anim*/
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+input[type=password]:focus {
+    border: 3px solid #cab981;
+}
+
+select {
+    width:30%;
+    background-color: #fffaea;
+    border: 3px solid #e6e1d2;
+    border-radius: 4px;
+    /*focus anim:*/
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+select:focus {
+    border: 3px solid #cab981;
+}
+
+button {
+    background-color: #e6e1d2;
+    border: 3px solid #e6e1d2;
+    border-radius: 4px;
+    cursor: pointer;
+    /*hover anim:*/
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+button:hover {
+    background-color: #cab981;
+    border: 3px solid #cab981;
+}
