@@ -1,0 +1,127 @@
+html {
+    min-height: 100%;
+    font-size: 16px;
+}
+
+body {
+    background-color: #fff2cc;
+    background: linear-gradient(180deg, rgba(253,211,150,1) 0%, rgba(220,123,232,1) 100%);
+}
+
+.field {
+    user-select: none;
+    cursor: pointer;
+}
+
+#dim {
+    background-color: black;
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.editor {
+    background-color: #fff2cc;
+    border: 3px solid #e6e1d2;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px -1px #333;
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    padding: 15px;
+    z-index: 2;
+    text-align: center;
+}
+.editor > p {
+    text-transform: uppercase;
+    margin: 0;
+}
+.editor > input.userInput {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.editor > input[type=submit], .editor > input[type=button] {
+    background-color: #eee;
+    border-radius: 4px;
+}
+.editor > input[type=button]:hover {
+    background-color: #ddd;
+}
+.editor > input[type=submit] {
+    background-color: #ebe1fd;
+}
+.editor > input[type=submit]:hover {
+    background-color: #dfcffc;
+}
+
+.name {
+    background-color: #ebe1fd;
+    border-color: #b00630;
+    border-style: double;
+    border-width: thick;
+    border-radius: 25px;
+    text-align: center;
+    font-family: "Fondamento", serif;
+    font-weight: normal;
+    font-variant: small-caps;
+    font-size: 3rem;
+}
+
+.classes {
+    margin: auto;
+    width: max-content;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #ebe1fd;
+    border-color: #b00630;
+    border-style: double;
+    border-top-style: none; 
+    border-width: thick;
+    border-radius: 0 0 15px 15px;
+    text-align: center;
+    font-family: "Aref Ruqaa Ink", serif;
+    font-weight: normal;
+    font-variant: small-caps;
+    font-size: 1.3rem;
+}
+
+.main {
+    display: flex;
+    margin-top: 24px;
+    justify-content: space-around;
+}
+.skillClmn {flex-basis: 350px;}
+.combatClmn {flex-basis: 400px;}
+.featuresClmn {flex-basis: 350px;}
+
+.combatRow {
+    display: flex;
+    justify-content: space-between;
+}
+.combatBox {
+    flex-basis: 100px;
+    background-color: #ebe1fd;
+    border-color: #b00630;
+    border-style: double;
+    border-width: thick;
+    border-radius: 15px;
+    text-align: center;
+    font-family: "Aref Ruqaa Ink", serif;
+    font-weight: normal;
+    font-size: 1rem;
+    padding: 0;
+}
+.combatValue {
+    font-size: 1.5rem;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Sheet</title>
+    <link rel="stylesheet" href="sheet.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fondamento">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bree+Serif">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aref+Ruqaa+Ink">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class='field text name'  id='name'></div>
+    <div class='classes'><span class='aClass'>Ranger (Stormchaser) - 5</span> / Sorcerer - 1</div>
+    <div class='main'>
+        <div class='skillClmn'>-</div>
+        <div class='combatClmn'>
+            <div class='combatRow'>
+                <div class='combatBox'>Initiative<div class='combatValue'>+<span class='field num' id='initiative'></span></div></div>
+                <div class='combatBox'>Armor Class<div class='field num combatValue' id='armorclass'></div></div>
+                <div class='combatBox'>Speed<div class='field num combatValue' id='speed'></div></div>
+            </div>
+        </div>
+        <div class='featuresClmn'>-</div>
+    </div>
+    <div id='dim'></div>
+    <div class='editor text'>
+        <p></p>
+        <input type='text' class='userInput'><br>
+        <input type='button' value='Cancel'>
+        <input type='submit' value='Confirm'>
+    </div>
+    <div class='editor num'>
+        <p></p>
+        <input type='number' class='userInput'><br>
+        <input type='button' value='Cancel'>
+        <input type='submit' value='Confirm'>
+    </div>
+    <script src="sheet.js"></script>
+</body>
+</html>

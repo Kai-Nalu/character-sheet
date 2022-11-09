@@ -1,35 +1,21 @@
-let keyInput = document.getElementById('cskey');
-let characterDropdown = document.getElementById('cscharacter');
-
-let characterSelectionDiv = document.getElementById('cscharacterSelection');
-characterSelectionDiv.style.display = 'none';
-
-let keyButton = document.getElementById('cskeyButton');
-keyButton.addEventListener('click', ()=>{
-    keySubmit(keyInput.value);
+$(document).ready(function(){
+    $("#cscharacterSelection").hide();
+    
+    $("#cskeyButton").click(function(){
+        $.get("http://129.21.148.160:4461/checkkey/"+$("#cskey").val(), function(data, status){
+            if (status == "success") {
+                if (JSON.parse(data).auth) {
+                    $("#cscharacter").empty();
+                    for (let i in JSON.parse(data).names) {
+                        $("#cscharacter").append(`<option value='${JSON.parse(data).uids[i]}'>${JSON.parse(data).names[i]}</option>`);
+                    }
+                    $("#cscharacterSelection").show();
+                } else {alert("Invalid key.");}
+            } else {alert("Request failed.");}
+        });
+    });
+    
+    $("#cscharacterButton").click(function(){
+        window.location.href = "./sheet.html?character="+$("#cscharacter").val();
+    });
 });
-
-function keySubmit(key) {
-    let xmlhttpKey = new XMLHttpRequest();
-    xmlhttpKey.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            checkKey(JSON.parse(this.responseText));
-        }
-    };
-    xmlhttpKey.open('GET', `http://129.21.148.160:4461/checkkey/${key}`, true);
-    xmlhttpKey.send();
-}
-
-function checkKey(result) {
-    if (result.auth) {
-        characterDropdown.options.length = 0;
-        for (let i in result.names) {
-            let option =  document.createElement("option");
-            option.text = result.names[i];
-            characterDropdown.add(option);
-        }
-        characterSelectionDiv.style.display = 'block';
-    } else {
-        alert('Invalid key.');
-    }
-}
